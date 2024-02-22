@@ -1,0 +1,77 @@
+/* NavBar.css */
+
+.custom-navbar {
+  background-color: #020202b4;
+  padding: 10px;
+  border-bottom: 1px solid #ced4da;
+}
+
+.navbar-brand {
+  color: #d9ff00;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.navbar-toggler {
+  border-color: #d9ff00;
+}
+
+.navbar-toggler-icon {
+  background-color: #d9ff00;
+}
+
+.navbar-nav .nav-link {
+  color: #343a40;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #d9ff00;
+}
+
+.cart-widget {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.item-count {
+  background-color: #d9ff00;
+  color: #000000;
+  border-radius: 50%;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+/* Estilos adicionales para el menú desplegable */
+.menu-open {
+  .navbar-toggler-icon {
+    background-color: #d9ff00;
+  }
+
+  .navbar-nav {
+    background-color: #020202b4;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .nav-link {
+    color: #343a40;
+  }
+
+  .nav-link:hover {
+    color: #d9ff00;
+  }
+}
