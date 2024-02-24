@@ -1,12 +1,16 @@
+// App.jsx
+
 import React from 'react';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import FondoEcommerce from './Components/FondoEcommerce/FondoEcommerce';
 
 const App = () => {
   return (
     <div>
       <NavBar />
-      <ItemListContainer greeting="Bienvenido A TU TIENDA DE ROPA AMERICANA" />
+      <FondoEcommerce />
+      <ItemListContainer greeting="" />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
-import logo from './assets/logo.png'; // Importa el logo
 import { FaShoppingCart } from 'react-icons/fa';
 import './NavBar.css'; // Agrega un archivo CSS para estilos personalizados
 
@@ -15,7 +14,7 @@ const NavBar = () => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-light custom-navbar ${menuOpen ? 'menu-open' : ''}`}>
       <a className="navbar-brand" href="#">
-        <img src={logo} alt="Logo" className="logo-img" />
+      <img src="/src/assets/logo.png" alt="Logo" className="logo-img" />
         Malditos Alamos Crew
       </a>
       <button className="navbar-toggler" type="button" onClick={toggleMenu}>
