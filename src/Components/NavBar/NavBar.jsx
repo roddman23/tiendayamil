@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
-import logo from '../assets/logo.png'; // Importa el logo
+import logo from './assets/logo.png'; // Importa el logo
 import { FaShoppingCart } from 'react-icons/fa';
 import './NavBar.css'; // Agrega un archivo CSS para estilos personalizados
 
