@@ -1,17 +1,22 @@
-// App.jsx
+// App.js
 
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from './Components/NavBar/NavBar';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
-import FondoEcommerce from './Components/FondoEcommerce/FondoEcommerce';
+import Catalogo from './Components/Catalogo/Catalogo';
+import DetalleProducto from './Components/DetalleProducto/DetalleProducto';
 
 const App = () => {
   return (
-    <div>
-      <NavBar />
-      <FondoEcommerce />
-      <ItemListContainer greeting="" />
-    </div>
+    <Router>
+      <div>
+        <NavBar />
+        <Switch>
+          <Route path="/" exact component={Catalogo} />
+          <Route path="/detalle/:id" component={DetalleProducto} />
+        </Switch>
+      </div>
+    </Router>
   );
 };
 
