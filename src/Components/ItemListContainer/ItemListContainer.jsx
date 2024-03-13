@@ -1,20 +1,25 @@
-// ItemListContainer.jsx
-
-import React, { useEffect } from 'react';
+// En ItemListContainer.jsx
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { loadProductsByCategory } from '../api'; // Importa la función para cargar productos por categoría
+import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer = () => {
-  const { id } = useParams(); // Obtén el ID de la categoría de la URL
+const ItemListContainer = ({ productos }) => {
+  const { id } = useParams();
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    // Carga los productos correspondientes a la categoría
-    loadProductsByCategory(id);
-  }, [id]); // Vuelve a cargar los productos cuando cambia la ID de la categoría
+    // Filtra los productos por la categoría especificada en la URL
+    const categoryProducts = productos.filter(product => product.category === id);
+    setFilteredProducts(categoryProducts);
+  }, [id, productos]);
 
   return (
     <div>
-      {/* Renderiza la lista de productos */}
+      {filteredProducts.length ? (
+        <ItemList products={filteredProducts} />
+      ) : (
+        <p>Cargando productos...</p>
+      )}
     </div>
   );
 };
