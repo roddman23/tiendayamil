@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-rou
 import NavBar from './Components/NavBar/NavBar.jsx';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer.jsx';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer.jsx';
-import products from './Components/Products/products'; // Importa los datos de productos desde productos.js
 
 const App = () => {
   return (
