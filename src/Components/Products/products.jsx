@@ -1,12 +1,12 @@
-// Components/productos.js
 
-const productos = [
+const products = [
   {
     id: 1,
     nombre: 'Camiseta NBA Lakers',
     descripcion: 'Camiseta oficial de los Lakers de Los Ángeles.',
     precio: 40,
     imagen: '/img/lakers.jpg',
+    Category: 'NBA',
   },
   {
     id: 2,
@@ -14,6 +14,7 @@ const productos = [
     descripcion: 'Camiseta oficial de los Bulls de Chicago.',
     precio: 35,
     imagen: '/img/bulls.jpg',
+    Category: 'NBA',
   },
   {
     id: 3,
@@ -21,6 +22,7 @@ const productos = [
     descripcion: 'Camiseta oficial de los Warriors de Golden State.',
     precio: 38,
     imagen: '/img/warriors.jpg',
+    Category: 'NBA',
   },
   {
     id: 4,
@@ -28,6 +30,7 @@ const productos = [
     descripcion: 'Jersey oficial de los New England Patriots.',
     precio: 50,
     imagen: '/img/patriots.jpg',
+    Category: 'NFL',
   },
   {
     id: 5,
@@ -35,6 +38,7 @@ const productos = [
     descripcion: 'Jersey oficial de los Dallas Cowboys.',
     precio: 45,
     imagen: '/img/cowboys.jpg',
+    Category: 'NFL',
   },
   {
     id: 6,
@@ -42,7 +46,8 @@ const productos = [
     descripcion: 'Jersey oficial de los Green Bay Packers.',
     precio: 48,
     imagen: '/img/packers.jpg',
+    Category: 'NFL',
   },
 ];
 
-export default productos;
+export default products;

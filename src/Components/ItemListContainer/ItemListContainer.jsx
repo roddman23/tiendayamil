@@ -1,17 +1,21 @@
-// En ItemListContainer.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
+import products from '../Products/products'; // Importa la variable 'products' desde productos.jsx
 
-const ItemListContainer = ({ productos }) => {
+const ItemListContainer = () => {
   const { id } = useParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    // Filtra los productos por la categoría especificada en la URL
-    const categoryProducts = productos.filter(product => product.category === id);
-    setFilteredProducts(categoryProducts);
-  }, [id, productos]);
+    // Filtrar productos por categoría si hay un ID definido
+    if (id) {
+      const categoryProducts = products.filter(product => product.category === id);
+      setFilteredProducts(categoryProducts);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [id]);
 
   return (
     <div>
