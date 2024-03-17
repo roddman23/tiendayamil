@@ -1,40 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import { getProducts, getProductsByCategory } from '../../../../asyncMock'; // Importa las funciones para obtener productos
+import { getProducts, getProductsByCategory } from '../../../../asyncMock';
 
 const ItemListContainer = () => {
   const { id } = useParams();
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        let fetchedProducts;
-        if (id) {
-          fetchedProducts = await getProductsByCategory(id);
-        } else {
-          fetchedProducts = await getProducts();
-        }
-        setFilteredProducts(fetchedProducts);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      } finally {
-        setLoading(false);
+    const fetchData = async () => {
+      // Obtener productos por categoría si hay un ID definido
+      if (id) {
+        const categoryProducts = await getProductsByCategory(id);
+        setFilteredProducts(categoryProducts);
+      } else {
+        const allProducts = await getProducts();
+        setFilteredProducts(allProducts);
       }
     };
 
-    fetchProducts();
+    fetchData();
   }, [id]);
 
   return (
     <div>
-      {loading ? (
-        <p>Cargando productos...</p>
-      ) : (
+      {filteredProducts.length ? (
         <ItemList products={filteredProducts} />
+      ) : (
+        <p>Cargando productos...</p>
       )}
     </div>
   );
