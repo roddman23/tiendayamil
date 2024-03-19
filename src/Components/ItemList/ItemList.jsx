@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import ItemDetail from '../ItemDetail/ItemDetail'; // Importa el componente ItemDetail
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
 
-const ItemList = ({ products, onAddToCart }) => {
+const ItemList = ({ products }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const handleViewDetails = (product) => {
@@ -19,16 +19,18 @@ const ItemList = ({ products, onAddToCart }) => {
               <Card.Title>{product.name}</Card.Title>
               <Card.Text>{product.description}</Card.Text>
               <Card.Text>Precio: ${product.price}</Card.Text>
-              <Button variant="primary" onClick={() => handleAddToCart(product)}>
+              <Button variant="primary" onClick={() => onAddToCart(product)}>
                 Agregar al carrito
               </Button>
-              <Button variant="secondary" className="ml-2" onClick={() => handleViewDetails(product)}>
+              {/* Utiliza el componente Link para redirigir al detalle del producto */}
+              <Link to={`/item/${product.id}`} className="btn btn-secondary ml-2">
                 Ver detalles
-              </Button>
+              </Link>
             </Card.Body>
           </Card>
         </div>
       ))}
+      {/* Si hay un producto seleccionado, muestra los detalles */}
       {selectedProduct && (
         <div className="col-md-12 mt-4">
           <ItemDetail product={selectedProduct} onClose={() => setSelectedProduct(null)} />

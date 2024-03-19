@@ -1,11 +1,13 @@
 import React from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const CartWidget = () => {
+const CartWidget = ({ itemCount }) => {
   return (
-    <div className="cart-widget">
-      <span className="cart-icon">🛒</span>
-      <span className="cart-count">0</span>
-    </div>
+    <Link to="/cart" className="cart-widget">
+      <FaShoppingCart />
+      {itemCount > 0 && <span className="cart-item-count">{itemCount}</span>}
+    </Link>
   );
 };
 
