@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Card, Button } from 'react-bootstrap';
+import ItemDetail from '../ItemDetail/ItemDetail'; // Importa el componente ItemDetail
 
-const ItemList = ({ products }) => {
+const ItemList = ({ products, onAddToCart }) => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const handleViewDetails = (product) => {
+    setSelectedProduct(product);
+  };
+
   return (
     <div className="row">
-      {products.map(product => (
-        <div className="col-md-4 mb-4" key={product.id}>
-          <div className="border p-3">
-            <img src={product.image} alt={product.name} className="img-fluid mb-3" />
-            <h5>{product.name}</h5>
-            <p>{product.description}</p>
-            <p>Precio: ${product.price}</p>
-            <button className="btn btn-primary">Agregar al carrito</button>
-          </div>
+      {products.map((product) => (
+        <div key={product.id} className="col-md-4 mb-4">
+          <Card>
+            <Card.Img variant="top" src={product.image} alt={product.name} />
+            <Card.Body>
+              <Card.Title>{product.name}</Card.Title>
+              <Card.Text>{product.description}</Card.Text>
+              <Card.Text>Precio: ${product.price}</Card.Text>
+              <Button variant="primary" onClick={() => handleAddToCart(product)}>
+                Agregar al carrito
+              </Button>
+              <Button variant="secondary" className="ml-2" onClick={() => handleViewDetails(product)}>
+                Ver detalles
+              </Button>
+            </Card.Body>
+          </Card>
         </div>
       ))}
+      {selectedProduct && (
+        <div className="col-md-12 mt-4">
+          <ItemDetail product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+        </div>
+      )}
     </div>
   );
 };

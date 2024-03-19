@@ -1,12 +1,17 @@
 import React from 'react';
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ product, onClose }) => {
+  if (!product) {
+    return null;
+  }
+
   return (
-    <div className="item-detail">
-      <img src={item.image} alt={item.name} />
-      <h2>{item.name}</h2>
-      <p>${item.price}</p>
-      <p>{item.description}</p>
+    <div>
+      <h2>{product.name}</h2>
+      <p>{product.description}</p>
+      <p>Precio: ${product.price}</p>
+      <img src={product.image} alt={product.name} />
+      <button onClick={onClose}>Cerrar</button>
     </div>
   );
 };
