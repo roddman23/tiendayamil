@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020; /* Color de fondo oscuro */
+    padding: 30px; /* Añade espacio interno al contenedor */
+    margin-top: 0px;
+  }

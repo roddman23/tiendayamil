@@ -1,10 +1,9 @@
-/* App.css */
 
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: #202020;
     color: #333;
   }
   
@@ -76,16 +75,17 @@ body {
   }
   
   .btn {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #f7e706;
+    color: #000000;
     border: none;
     padding: 10px 20px;
+    margin-left: 5px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .btn:hover {
-    background-color: #0056b3;
+    background-color: #000000;
   }
   

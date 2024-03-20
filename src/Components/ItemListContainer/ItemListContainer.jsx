@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
 import { getProducts, getProductsByCategory } from '../../../asyncMock';
 import { useCart } from '../CartContext/CartContext'; // Importamos el contexto del carrito
+import './ItemListContainer.css'; // Importamos el archivo de estilos CSS
 
 const ItemListContainer = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const ItemListContainer = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="container"> {/* Agregamos la clase de contenedor */}
       <ItemList products={filteredProducts} onAddToCart={addToCart} />
     </div>
   );
