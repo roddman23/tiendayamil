@@ -5,7 +5,7 @@ const products = [
       name: 'Camiseta NBA Lakers',
       description: 'Camiseta oficial de los Lakers de Los Ángeles.',
       price: 40,
-      image: '/public/lakers.jpg',
+      image: 'https://tiendayamil.vercel.app/public/lakers.jpg',
     },
     {
       id: 2,
@@ -13,7 +13,7 @@ const products = [
       name: 'Camiseta NBA Bulls',
       description: 'Camiseta oficial de los Bulls de Chicago.',
       price: 35,
-      image: '/public/bulls.jpg',
+      image: 'https://tiendayamil.vercel.app/public/bulls.jpg',
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ const products = [
       name: 'Camiseta NBA Warriors',
       description: 'Camiseta oficial de los Warriors de Golden State.',
       price: 38,
-      image: '/public/warriors.jpg',
+      image: 'https://tiendayamil.vercel.app/public/warriors.jpg',
     },
     {
       id: 4,
@@ -29,7 +29,7 @@ const products = [
       name: 'Jersey NFL Patriots',
       description: 'Jersey oficial de los New England Patriots.',
       price: 50,
-      image: '/public/patriots.jpg',
+      image: 'https://tiendayamil.vercel.app/public/patriots.jpg',
     },
     {
       id: 5,
@@ -37,7 +37,7 @@ const products = [
       name: 'Jersey NFL Cowboys',
       description: 'Jersey oficial de los Dallas Cowboys.',
       price: 45,
-      image: '/public/cowboys.jpg',
+      image: 'https://tiendayamil.vercel.app/public/cowboys.jpg',
     },
     {
       id: 6,
@@ -45,7 +45,7 @@ const products = [
       name: 'Jersey NFL Packers',
       description: 'Jersey oficial de los Green Bay Packers.',
       price: 48,
-      image: '/public/packers.jpg',
+      image: 'https://tiendayamil.vercel.app/public/packers.jpg',
     },
   ];
   
