@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
   }
-  
+
   .cart-item-img {
     flex: 0 0 100px; /* Establece el ancho de la imagen */
     margin-right: 20px;
@@ -21,29 +21,31 @@
   
   .cart-item-info {
     flex: 1; /* Ocupa todo el espacio restante */
+    color:#ffffff;
   }
   
   .cart-item-title {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
+    color: white;
   }
   
   .cart-item-description {
     font-size: 14px;
-    color: #666;
+    color: #ffffff;
     margin-bottom: 10px;
   }
   
   .cart-item-price {
     font-size: 16px;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
   }
   
   .cart-item-quantity {
     font-size: 14px;
-    color: #666;
+    color: #ffffff;
   }
   
   .cart-item-buttons {
