@@ -1,12 +1,12 @@
+// CartWidget.jsx
 import React from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
 
 const CartWidget = ({ itemCount }) => {
   return (
-    <Link to="/cart" className="cart-widget">
-      <FaShoppingCart />
-      {itemCount > 0 && <span className="cart-item-count">{itemCount}</span>}
+    <Link to="/cart">
+      <FaShoppingCart /> <span>{itemCount}</span>
     </Link>
   );
 };

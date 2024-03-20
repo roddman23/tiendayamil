@@ -1,0 +1,83 @@
+.item-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: #f9f9f9; /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+  }
+  
+  .item-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff; /* Color de fondo */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+  
+  .item-card:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+  }
+  
+  .item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .item-details {
+    padding: 20px;
+  }
+  
+  .item-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Color del texto */
+  }
+  
+  .item-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666; /* Color del texto */
+  }
+  
+  .item-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Color del texto */
+  }
+  
+  .btn-add-to-cart {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición al pasar el mouse */
+  }
+  
+  .btn-add-to-cart:hover {
+    background-color: #0056b3; /* Color de fondo del botón al pasar el mouse */
+  }
+  
+  .btn-view-details {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #28a745; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición al pasar el mouse */
+  }
+  
+  .btn-view-details:hover {
+    background-color: #218838; /* Color de fondo del botón al pasar el mouse */
+  }
+  

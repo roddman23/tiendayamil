@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import { getProducts, getProductsByCategory } from '../../../asyncMock'; // Ajustamos la importación
+import { getProducts, getProductsByCategory } from '../../../asyncMock';
+import { useCart } from '../CartContext/CartContext'; // Importamos el contexto del carrito
 
 const ItemListContainer = () => {
   const { id } = useParams();
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = React.useState([]);
+  const { addToCart } = useCart(); // Obtenemos la función para agregar al carrito
 
   useEffect(() => {
     const fetchData = async () => {
-      // Obtener productos por categoría si hay un ID definido
-      if (id) {
-        const categoryProducts = await getProductsByCategory(id);
-        setFilteredProducts(categoryProducts);
-      } else {
-        const allProducts = await getProducts();
-        setFilteredProducts(allProducts);
+      try {
+        if (id) {
+          const categoryProducts = await getProductsByCategory(id);
+          setFilteredProducts(categoryProducts);
+        } else {
+          const allProducts = await getProducts();
+          setFilteredProducts(allProducts);
+        }
+      } catch (error) {
+        console.error('Error fetching products:', error);
       }
     };
 
@@ -24,11 +29,7 @@ const ItemListContainer = () => {
 
   return (
     <div>
-      {filteredProducts.length ? (
-        <ItemList products={filteredProducts} />
-      ) : (
-        <p>Cargando productos...</p>
-      )}
+      <ItemList products={filteredProducts} onAddToCart={addToCart} />
     </div>
   );
 };

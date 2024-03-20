@@ -5,7 +5,7 @@ const products = [
       name: 'Camiseta NBA Lakers',
       description: 'Camiseta oficial de los Lakers de Los Ángeles.',
       price: 40,
-      image: '/img/lakers.jpg',
+      image: './img/lakers.jpg',
     },
     {
       id: 2,
@@ -13,7 +13,7 @@ const products = [
       name: 'Camiseta NBA Bulls',
       description: 'Camiseta oficial de los Bulls de Chicago.',
       price: 35,
-      image: '/img/bulls.jpg',
+      image: '../img/bulls.jpg',
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ const products = [
       name: 'Camiseta NBA Warriors',
       description: 'Camiseta oficial de los Warriors de Golden State.',
       price: 38,
-      image: '/img/warriors.jpg',
+      image: '../../img/warriors.jpg',
     },
     {
       id: 4,
