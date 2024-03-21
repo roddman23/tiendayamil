@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaShoppingCart } from 'react-icons/fa';
-import './NavBar.css'; // Agrega un archivo CSS para estilos personalizados
-
-const NFL = 'NFL';
-const NBA = 'NBA';
+import './NavBar.css';
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,7 +13,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-light custom-navbar ${menuOpen ? 'menu-open' : ''}`}>
+    <nav className="navbar navbar-expand-lg navbar-light custom-navbar">
       <Link to="/" className="navbar-brand">
         <img src="https://github.com/roddman23/tiendayamil/blob/main/src/assets/logo.png?raw=true" alt="Logo" className="logo-img" />
         Malditos Alamos Crew
@@ -24,7 +21,7 @@ const NavBar = () => {
       <button className="navbar-toggler" type="button" onClick={toggleMenu}>
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`}>
+      <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''} custom-navbar-collapse`}>
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link to="/" className="nav-link">
@@ -44,6 +41,7 @@ const NavBar = () => {
         </ul>
         <CartWidget itemCount={0} />
       </div>
+      {menuOpen && <div className="overlay" onClick={toggleMenu}></div>}
     </nav>
   );
 };
