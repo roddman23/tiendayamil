@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-light custom-navbar ${menuOpen ? 'menu-open' : ''}`}>
       <Link to="/" className="navbar-brand">
-        <img src="/src/assets/logo.png" alt="Logo" className="logo-img" />
+        <img src="https://github.com/roddman23/tiendayamil/blob/main/src/assets/logo.png?raw=true" alt="Logo" className="logo-img" />
         Malditos Alamos Crew
       </Link>
       <button className="navbar-toggler" type="button" onClick={toggleMenu}>

@@ -45,7 +45,7 @@ const products = [
       name: 'Jersey NFL Packers',
       description: 'Jersey oficial de los Green Bay Packers.',
       price: 48,
-      image: 'https://github.com/roddman23/tiendayamil/blob/main/public/packers.jpg?raw=true',
+      image: 'https://github.com/roddman23/tiendayamil/blob/main/public/Packers.jpg?raw=true',
     },
   ];
   
