@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; 
-import { getProducts, getProductsByCategory } from '../../../asyncMock';
 import './ItemList.css';
 
 const ItemList = ({ products, onAddToCart }) => {
