@@ -47,7 +47,7 @@
 }
 
 /* Estilos adicionales para el menú desplegable */
-@media (max-width: 767px) {
+@media (max-width: 769px) {
   .custom-navbar-collapse {
     position: absolute;
     top: 60px; /* Ajusta según sea necesario para evitar la superposición con la barra de navegación */

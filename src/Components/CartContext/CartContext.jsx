@@ -33,6 +33,17 @@ export const CartProvider = ({ children }) => {
     setTotalItems(totalItems - 1); // Decrementa la cantidad total de elementos en el carrito
   };
 
+  // Actualizar la cantidad de un producto en el carrito
+  const updateQuantity = (productId, newQuantity) => {
+    const updatedCart = cart.map((product) => {
+      if (product.id === productId) {
+        return { ...product, quantity: newQuantity };
+      }
+      return product;
+    });
+    setCart(updatedCart);
+  };
+
   // Vaciar el carrito
   const clearCart = () => {
     setCart([]);
@@ -40,7 +51,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, totalItems }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, clearCart, totalItems }}>
       {children}
     </CartContext.Provider>
   );
