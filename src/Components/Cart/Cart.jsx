@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from "react-router-dom"
 import { CartContext } from '../CartContext/CartContext';
 import './CartItem.css'; // Importa los estilos CSS
 
 const Cart = () => {
-  const { cart, removeFromCart, updateQuantity, clearCart } = useContext(CartContext);
+  const { cart, precioTotal, removeFromCart, updateQuantity, clearCart } = useContext(CartContext);
 
   return (
     <div>
@@ -48,9 +49,13 @@ const Cart = () => {
             </div>
           ))}
           <hr />
+          <p className="cart-total">Precio Total: ${precioTotal()}</p>
           <Button variant="danger" onClick={() => clearCart()}>
             Vaciar Carrito
           </Button>
+          <Link to='/checkout'>
+            <Button variant="primary">Checkout</Button>
+          </Link>
         </div>
       )}
     </div>

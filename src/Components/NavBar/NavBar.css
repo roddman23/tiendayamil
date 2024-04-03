@@ -6,7 +6,7 @@
 }
 
 .navbar-brand {
-  color: #d9ff00;
+  color: #ffee00;
 }
 
 .logo-img {
@@ -17,11 +17,11 @@
 }
 
 .navbar-toggler {
-  border-color: #d9ff00;
+  border-color: #ffee00;
 }
 
 .navbar-toggler-icon {
-  background-color: #d9ff00;
+  background-color: #ffee00;
 }
 
 .navbar-nav .nav-link {
@@ -29,7 +29,7 @@
 }
 
 .navbar-nav .nav-link:hover {
-  color: #d9ff00;
+  color: #ffee00;
 }
 
 .cart-widget {
@@ -39,7 +39,7 @@
 }
 
 .item-count {
-  background-color: #d9ff00;
+  background-color: #ffee00;
   color: #000000;
   border-radius: 50%;
   padding: 5px;
@@ -72,7 +72,7 @@
   }
   
   .custom-navbar-collapse .nav-link {
-    color: #d9ff00;
+    color: #ffee00;
     text-decoration: none;
     display: block;
   }

@@ -7,6 +7,9 @@
     display: flex;
     align-items: center;
   }
+.cart-total{ 
+  color:white
+}
 
   .cart-item-img {
     flex: 0 0 100px; /* Establece el ancho de la imagen */

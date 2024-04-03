@@ -50,8 +50,13 @@ export const CartProvider = ({ children }) => {
     setTotalItems(0); // Restablece la cantidad total de elementos en el carrito a 0
   };
 
+  // Calcular el precio total del carrito
+  const precioTotal = () => {
+    return cart.reduce((total, product) => total + (product.price * product.quantity), 0);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, clearCart, totalItems }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, clearCart, totalItems, precioTotal }}>
       {children}
     </CartContext.Provider>
   );

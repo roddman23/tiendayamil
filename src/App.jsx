@@ -7,6 +7,7 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import Cart from './Components/Cart/Cart'; 
 import { CartProvider } from './Components/CartContext/CartContext';
 import './App.css'; // Importamos el archivo de estilos CSS
+import Checkout from './Components/Checkout/Checkout';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/category/:id" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<h4>404 NOT FOUND</h4>} />
           </Routes>
         </div>

@@ -1,35 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
-import { getProducts, getProductsByCategory } from '../../../asyncMock';
-import { useCart } from '../CartContext/CartContext'; // Importamos el contexto del carrito
-import './ItemListContainer.css'; // Importamos el archivo de estilos CSS
+import { useCart } from '../CartContext/CartContext';
+import { db } from '../../firebase/config'; // Importamos la instancia de Firebase Firestore
+import { collection, getDocs, query, where } from 'firebase/firestore'; // Importamos las funciones necesarias de Firestore
 
 const ItemListContainer = () => {
   const { id } = useParams();
-  const [filteredProducts, setFilteredProducts] = React.useState([]);
-  const { addToCart } = useCart(); // Obtenemos la función para agregar al carrito
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const { addToCart } = useCart();
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchProducts = async () => {
       try {
+        const productsCollection = collection(db, 'productos'); // Referencia a la colección 'productos'
+        let productsQuery;
+
         if (id) {
-          const categoryProducts = await getProductsByCategory(id);
-          setFilteredProducts(categoryProducts);
+          // Si hay un ID de categoría en los parámetros de la URL, filtramos los productos por esa categoría
+          productsQuery = query(productsCollection, where('category', '==', id));
         } else {
-          const allProducts = await getProducts();
-          setFilteredProducts(allProducts);
+          // Si no hay un ID de categoría, obtenemos todos los productos
+          productsQuery = productsCollection;
         }
+
+        const querySnapshot = await getDocs(productsQuery);
+
+        const products = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+
+        setFilteredProducts(products);
       } catch (error) {
         console.error('Error fetching products:', error);
       }
     };
 
-    fetchData();
+    fetchProducts();
   }, [id]);
 
   return (
-    <div className="container"> {/* Agregamos la clase de contenedor */}
+    <div className="container">
       <ItemList products={filteredProducts} onAddToCart={addToCart} />
     </div>
   );
