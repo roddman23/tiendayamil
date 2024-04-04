@@ -3,7 +3,7 @@ import { CartContext } from '../CartContext/CartContext';
 import { useForm } from 'react-hook-form';
 import { collection, addDoc } from "firebase/firestore";
 import { db } from '../../firebase/config';
-import './Checkout.css'; // Importa tus estilos CSS para Checkout
+import './Checkout.css'; 
 
 const Checkout = () => {
     const { cart, precioTotal, vaciarCarrito } = useContext(CartContext);
@@ -57,7 +57,8 @@ const Checkout = () => {
                 <input type="text" placeholder="Ingresá tu nombre" {...register("nombre")} className="input-field" />
                 <input type="email" placeholder="Ingresá tu e-mail" {...register("email")} className="input-field" />
                 <input type="phone" placeholder="Ingresá tu teléfono" {...register("telefono")} className="input-field" />
-                <button className="enviar" type="submit">Comprar</button>
+                <button className="enviar" type="submit" onClick={() => { handleSubmit(comprar); vaciarCarrito(); }}>Comprar</button>
+
             </form>
         </div>
     );
